@@ -1,6 +1,6 @@
 interface User {
   readonly dbId: number
-  email: string, 
+  email: string,
   userId: number,
   googleId?: string,
   startTrail(): string,
@@ -22,11 +22,12 @@ interface User {
 interface User {
   gitHubToken: string
 }
-const deen: User = {
-  dbId: 22, 
+const deen: Admin = {
+  dbId: 22,
   email: "deen@gmail.com",
   userId: 949383,
-  gitHubToken: "github", 
+  gitHubToken: "github",
+  role: "admin",
   startTrail: () => {
     return "trail started"
   },
@@ -40,3 +41,4 @@ const deen: User = {
 interface Admin extends User {
   role: "admin" | "ta" | "learner"
 }
+
