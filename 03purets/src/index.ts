@@ -1,6 +1,6 @@
 class User {
 
-  private _courseCount = 1;
+  protected _courseCount = 1;
   readonly city: string = "";
 
   constructor(
@@ -37,6 +37,14 @@ class User {
 
   private deleteToken() {
     return 'Token deleted';
+  }
+
+}
+
+class SubUser extends User {
+  isFamily: boolean = true
+  changeCourseCount() {
+    this._courseCount = 4
   }
 }
 
