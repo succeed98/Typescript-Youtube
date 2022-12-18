@@ -25,4 +25,54 @@ interface Bottle{
   type: number,
 }
 
-identityFour<Bottle>({brand: "shortcut", type: 4});
+// identityFour<Bottle>({brand: "shortcut", type: 4});
+
+function getSearchProducts<T>(products: T[]): T {
+  // do some database operations
+  const myIndex = 3
+  return products[myIndex]
+}
+
+const getModeSearchProducts = <T>(products: T[]): T => {
+  // do some database operations
+  const myIndex = 4
+  return products[myIndex ]
+}
+
+interface Database {
+  connection: string, 
+  username: string, 
+  password: string
+}
+
+function anotherFunction<T, U extends Database>(valOne: T, valTwo: U):object {
+  return {
+    valOne,
+    valTwo
+  }
+}
+
+// anotherFunction(2, {
+//   connection: "mysql",
+//   username: "elias",
+//   password: "99292"
+// })
+
+interface Quize {
+  name: string,
+  type: string
+}
+
+interface Course {
+  name: string,
+  author: string
+  subject: string
+}
+
+class Sellable<T>{
+  public cart : T[] = []
+
+  addToCart(product: T) {
+    this.cart.push(product)
+  }
+}
