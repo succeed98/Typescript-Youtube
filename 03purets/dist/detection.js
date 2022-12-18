@@ -39,3 +39,16 @@ function logValue(x) {
         console.log(x.toUpperCase());
     }
 }
+function isFish(pet) {
+    return pet.swim !== undefined;
+}
+function getFood(pet) {
+    if (isFish(pet)) {
+        pet;
+        return "fish food";
+    }
+    else {
+        pet;
+        return "this is a bed food";
+    }
+}
